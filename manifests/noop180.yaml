@@ -1,0 +1,21 @@
+apiVersion: nop.crossplane.io/v1alpha1
+kind: NopResource
+metadata:
+  name: mr-180
+spec:
+  forProvider:
+    conditionAfter:
+      - conditionStatus: "True"
+        conditionType: Ready
+        time: 30s
+      - conditionStatus: "False"
+        conditionType: Ready
+        time: 60s
+      - conditionStatus: "True"
+        conditionType: Ready
+        time: 90s
+      - conditionStatus: "True"
+        conditionType: Green
+        time: 90s
+  providerConfigRef:
+    name: default
