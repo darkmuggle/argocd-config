@@ -1,0 +1,12 @@
+apiVersion: nop.crossplane.io/v1alpha1
+kind: NopResource
+metadata:
+  name: mr-1334
+spec:
+  forProvider:
+    conditionAfter:
+      - conditionStatus: "True"
+        conditionType: Ready
+        time: 1s
+  providerConfigRef:
+    name: default
