@@ -15,10 +15,3 @@ metadata:
 spec:
   credentials:
     source: InjectedIdentity
----
-apiVersion: pkg.crossplane.io/v1
-kind: Provider
-metadata:
-  name: provider-nop
-spec:
-  package: xpkg.upbound.io/crossplane-contrib/provider-nop:v0.2.0
